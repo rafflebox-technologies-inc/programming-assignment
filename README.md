@@ -21,4 +21,12 @@ Your solution should be...
 - Have a clean design
 - Contain validation at each layer
 
-Upload your solution to github
+The solution will be scored on the following criteria:
+
+- Clean code
+- Creative / user-friendly design / styling
+- Architectural design
+- Simplicity
+- Ease of deployment
+
+Once completed upload your solution to github.
