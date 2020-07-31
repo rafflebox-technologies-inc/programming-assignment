@@ -14,4 +14,4 @@ Preferably your design should be built using the following technologies (if you 
 2. Backend api - Node.js (Express and TypeScript preferably)
 3. Database - Either NoSQL or RDBMS
 
-Your solution should be user friendly, responsive, and have validation at each architectural layer.
+Your solution should be user friendly, be responsive, have a clean design, and have validation at each architectural layer.
