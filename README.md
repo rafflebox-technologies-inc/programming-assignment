@@ -17,6 +17,8 @@ Preferably your design should be built using the following technologies (if you 
 Your solution should be...
 
 - User friendly
-- Responsive design
+- Responsive
 - Have a clean design
 - Contain validation at each layer
+
+Upload your solution to github
