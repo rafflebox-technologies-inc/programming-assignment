@@ -10,7 +10,7 @@ The solution should include:
 
 Preferably your design should be built using the following technologies (if you use a different technology please explain the reasoning):
 
-1. Front end web app - Vue.js + Bootstrap
+1. Front end web app - Vue.js
 2. Backend api - Node.js (Express and TypeScript preferably)
 3. Database - Either NoSQL or RDBMS
 
