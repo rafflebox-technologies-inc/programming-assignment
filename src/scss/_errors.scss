@@ -1,0 +1,20 @@
+// Error Box
+.form-errors {
+  font-size: 0.875em;
+  margin: 0 1em;
+  padding: 0.5em 1em;
+  background-color: lighten($grey, 10%);
+  border-radius: 3px;
+
+  span {
+    display: inline-block;
+  }
+
+  ul {
+    list-style-type: square;
+
+    li {
+      color: $error;
+    }
+  }
+}

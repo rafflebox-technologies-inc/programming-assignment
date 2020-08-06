@@ -14,13 +14,13 @@ export class CreateCityTable1596545504837 implements MigrationInterface {
 					generationStrategy: 'increment'
 				},
 				{
-					name: 'city_name',
+					name: 'name',
 					type: 'TEXT',
 					isNullable: false
 				},
 				{
 					name: 'time',
-					type: 'TEXT',
+					type: 'INTEGER',
 					isNullable: false
 				},
 				{
