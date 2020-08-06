@@ -1,0 +1,80 @@
+// List and List Item styles.
+.list-group {
+  list-style: none;
+  margin: 2em 0;
+  padding: 0.5em;
+}
+
+.list-item {
+  margin-bottom: 1em;
+  padding: 0.5em;
+  color: $white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+  transition: box-shadow .15s ease;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  &__head,
+  &__foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__head {
+    margin-bottom: 1em;
+  }
+
+  &__name {
+    display: block;
+    font-family: $head_font;
+    font-size: 1.5em;
+    max-width: 75%;
+    color: $white;
+    text-transform: uppercase;
+    word-break: break-word;
+  }
+
+  .btn--delete {
+    width: 1.75em;
+    height: 1.75em;
+    background-color: $tertiary;
+    background-position: center;
+    background-size: 50%;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNTEycHgiIGlkPSJMYXllcl8xIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMnB4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cGF0aCBkPSJNNDQzLjYsMzg3LjFMMzEyLjQsMjU1LjRsMTMxLjUtMTMwYzUuNC01LjQsNS40LTE0LjIsMC0xOS42bC0zNy40LTM3LjZjLTIuNi0yLjYtNi4xLTQtOS44LTRjLTMuNywwLTcuMiwxLjUtOS44LDQgIEwyNTYsMTk3LjhMMTI0LjksNjguM2MtMi42LTIuNi02LjEtNC05LjgtNGMtMy43LDAtNy4yLDEuNS05LjgsNEw2OCwxMDUuOWMtNS40LDUuNC01LjQsMTQuMiwwLDE5LjZsMTMxLjUsMTMwTDY4LjQsMzg3LjEgIGMtMi42LDIuNi00LjEsNi4xLTQuMSw5LjhjMCwzLjcsMS40LDcuMiw0LjEsOS44bDM3LjQsMzcuNmMyLjcsMi43LDYuMiw0LjEsOS44LDQuMWMzLjUsMCw3LjEtMS4zLDkuOC00LjFMMjU2LDMxMy4xbDEzMC43LDEzMS4xICBjMi43LDIuNyw2LjIsNC4xLDkuOCw0LjFjMy41LDAsNy4xLTEuMyw5LjgtNC4xbDM3LjQtMzcuNmMyLjYtMi42LDQuMS02LjEsNC4xLTkuOEM0NDcuNywzOTMuMiw0NDYuMiwzODkuNyw0NDMuNiwzODcuMXoiLz48L3N2Zz4=);
+    background-repeat: no-repeat;
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 0px 02px 1px lighten($black, 10%);
+    appearance: none;
+    transition: box-shadow 0.4s ease-in-out;
+
+    &:hover,
+    &:focus {
+      box-shadow: inset 0px 2px 3px $black;
+    }
+  }
+
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+}
+
+$colors: #263238, #4f5b62, #000a12, #37474f, #62727b, #102027;
+$repeat: 6;
+
+@for $i from 1 through $repeat {
+  .list-item:nth-child(#{length($colors)}n+#{$i}) {
+        background: lighten(nth($colors, random(length($colors))), 20%);
+    }
+}

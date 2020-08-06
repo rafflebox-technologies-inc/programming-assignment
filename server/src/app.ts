@@ -1,11 +1,19 @@
 import express from 'express';
 import * as bodyParser from 'body-parser';
 import { connect } from './db/db';
+import { getManager, getConnection } from 'typeorm';
 import { City } from './db/models/Cities.model';
 
 connect();
 
 const app = express();
+
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  next();
+});
 
 app.use(bodyParser.json({
   limit: '50mb',
@@ -13,12 +21,12 @@ app.use(bodyParser.json({
     req.rawBody = buf;
   }
 }));
+
 app.get('/', (req, res) => res.send('Hello World!'));
 
 app.post('/cities', async (req, res) => {
-  // Possibility to catpture a duplicate entry? Or handle on front end?
   const city = new City();
-  city.city_name = req.body.city_name;
+  city.name = req.body.name;
   city.time = req.body.time;
   city.temperature = req.body.temperature;
   await city.save();
@@ -27,7 +35,11 @@ app.post('/cities', async (req, res) => {
 });
 
 app.get('/cities', async (req, res) => {
-  const cities = await City.find();
+  const manager = getManager();
+  // Could not get the QueryBuilder to complete the inner join.
+  // Fell back to straight SQL.
+  const cities = await manager.query('SELECT cities.* FROM cities INNER JOIN (SELECT id, MAX(time) AS MaxTime FROM cities GROUP BY name) cc ON cities.id = cc.id AND cities.time = cc.MaxTime');
+
   res.send(cities);
 });
 
@@ -45,6 +57,7 @@ app.get('/cities/:id', async (req, res) => {
   }
 });
 
+// Unneeded route.
 app.put('/cities/:id', async (req, res) => {
   const city = await City.findOne({
     where: {
@@ -68,19 +81,15 @@ app.put('/cities/:id', async (req, res) => {
   }
 });
 
-app.delete('cities/:id', async (req, res) => {
-  const city = await City.findOne({
-    where: {
-      id: req.params.id
-    }
-  });
+app.delete('/cities/:name', async (req, res) => {
+  const city = await getConnection()
+    .createQueryBuilder()
+    .delete()
+    .from(City)
+    .where('name = :name', { name: req.params.name })
+    .execute();
 
-  if (city) {
-    await city.remove();
-    res.json({ message: 'City Deleted' });
-  } else {
-    res.status(404).send({ message: 'City not found'});
-  }
+  res.json({ message: 'City(s) Deleted', data: city });
 });
 
 export { app };

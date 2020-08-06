@@ -5,7 +5,7 @@ export const connect = async () => {
     'type': 'sqlite',
     'database': 'database.db',
     'name': 'default',
-    'synchronize': false,
+    'synchronize': true,
     'logging': true,
     'migrationsTableName': 'custom_migration_table',
     'entities': [

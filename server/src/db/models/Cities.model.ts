@@ -11,10 +11,10 @@ export class City extends BaseEntity {
   id: number;
 
   @Column()
-  city_name: string;
+  name: string;
 
   @Column()
-  time: string;
+  time: number;
 
   @Column()
   temperature: number;

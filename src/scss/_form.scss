@@ -1,0 +1,62 @@
+// Main Form Styles
+.form {
+  padding: 1em 0;
+
+  .form-group,
+  .button-group {
+    padding: 0.5em 1em;
+  }
+
+  .button-group {
+    margin-bottom: 1em;
+    text-align: right;
+  }
+
+  label {
+    display: block;
+    font-size: 0.75em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+  }
+
+  input {
+    font-family: $body_font;
+    padding: 0.5em;
+    height: 2.5em;
+    width: 100%;
+    border: 1px solid #a8a8a8;
+    appearance: none;
+    -moz-appearance: textfield;
+  }
+
+  .btn {
+    font-size: 0.875em;
+    height: 2.5em;
+    padding: 0.25em 1em 0.2em;
+    color:  $white;
+    background-color: $secondary;
+    border: 1px solid #a8a8a8;
+    text-transform: uppercase;
+    appearance: none;
+    transition: all 0.3s ease-in-out;
+
+    &:hover,
+    &:focus {
+      color: $primary;
+      background-color: $white;
+      border-color: $primary;
+    }
+  }
+
+  // vue-timepicker overwrites.
+  .time-picker {
+    width: 100%;
+
+    .display-time {
+      height: 2.5em;
+      width: 100%;
+      border: 1px solid #a8a8a8;
+    }
+  }
+}
