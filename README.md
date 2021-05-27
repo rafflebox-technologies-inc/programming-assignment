@@ -29,14 +29,18 @@ The solution will be scored on the following criteria:
 - Simplicity - `3 points`
 - Ease of deployment - `3 points`
 
+Maximum Score: `15 points`
+
 Once completed upload your solution to github. *Note: Please do not submit this as a Pull Request*
 
 ## Additional Points
 
 Candidates who perform the additional work will score additional points
 
-- Publish your solution using Docker and Docker-compose - `10 points`
-- Host your solution on AWS - `5 points`
-- Host the Vue.js app on Cloud Flare - `5 points`
-- Use `github actions` to create a CI/CD pipeline to deploy the solution to AWS/CF - `15 points`
-- Test Driven Development using `jest` - `3 points`
+- Build and run your solution using Docker and Docker-compose - `3 points`
+- Host your solution on AWS - `3 points`
+- Host the Vue.js app on Cloud Flare - `2 points`
+- Use `github actions` to create a CI/CD pipeline to deploy the solution to AWS/CF - `10 points`
+- Test Driven Development using `jest` - `2 points`
+
+Maximum Additional Score - `20 points`
