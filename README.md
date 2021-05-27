@@ -4,15 +4,15 @@ In this assignment you will build a simple web application that allows someone t
 
 The solution should include:
 
-1. A front end web application that allows a user to enter and remove the `time` and `temperature` of a `city`.
-2. An api that stores the `time` `temperature` and `city` into a local database (eg.SQLLite)
+1. A `front end web application` that allows a user to enter and remove the `time` and `temperature` of a `city`.
+2. An `api` that stores the `time` `temperature` and `city` into a local database (eg. SQL-Lite)
 3. Once entered the front end should display the `time` `temperature` and `city`. It should always display the most recent `temperature` (and no more than single temperature for the same city). 
 
-Preferably your design should be built using the following technologies (if you use a different technology please explain the reasoning):
+Your design should be built using the following technologies (if you use a different technology please explain the reasoning):
 
 1. Front end web app - Vue.js
-2. Backend api - Node.js (Express and TypeScript preferably)
-3. Database - Either NoSQL or RDBMS
+2. Backend api - Node.js (Express and TypeScript)
+3. Database - SQL-Lite or PostgreSQL
 
 Your solution should be...
 
@@ -23,10 +23,20 @@ Your solution should be...
 
 The solution will be scored on the following criteria:
 
-- Clean code
-- Creative / user-friendly design / styling
-- Architectural design
-- Simplicity
-- Ease of deployment
+- Clean code - `3 points`
+- Creative / user-friendly design / styling - `2 points`
+- Architectural design - `5 points`
+- Simplicity - `3 points`
+- Ease of deployment - `3 points`
 
-Once completed upload your solution to github.
+Once completed upload your solution to github. *Note: Please do not submit this as a Pull Request*
+
+## Additional Points
+
+Candidates who perform the additional work will score additional points
+
+- Publish your solution using Docker and Docker-compose - `10 points`
+- Host your solution on AWS - `5 points`
+- Host the Vue.js app on Cloud Flare - `5 points`
+- Use `github actions` to create a CI/CD pipeline to deploy the solution to AWS/CF - `15 points`
+- Test Driven Development using `jest` - `3 points`
