@@ -6,7 +6,7 @@ The solution should include:
 
 1. A web application that allows a user to store the `time` and `temperature` of a `city`.
 2. The application will store the information into a database (eg. SQL-Lite, PostgreSQL or MongoDB) via API call.
-3. Once entered the front end should display the `time` `temperature` and `city`. It should always display the most recent `temperature` (and no more than single temperature for the same city). 
+3. Once entered the front end should display the `time` `temperature` and `city`. It should always display the most recent `temperature`.
 
 Your design should be built using the following technologies):
 
