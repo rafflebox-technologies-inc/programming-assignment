@@ -8,9 +8,9 @@ The solution should include:
 2. The application will store the information into a database (eg. SQL-Lite, PostgreSQL or MongoDB) via API call.
 3. Once entered the front end should display the `time` `temperature` and `city`. It should always display the most recent `temperature`.
 
-Your design should be built using the following technologies):
+Your design should be built using the following technologies:
 
-1. Front end web application built in - Vue.js or Nuxt.js (Could be SPA or SSR).
+1. Front end web application built in - Vue.js or Nuxt.js or React (Could be SPA or SSR).
 2. Backend api - Node.js (preferably in Express and TypeScript)
 3. Database - SQL-Lite or PostgreSQL or MongoDB
 
